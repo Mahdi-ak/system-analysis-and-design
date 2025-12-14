@@ -1,4 +1,4 @@
-# system-analysis-and-design
+# system analysis and design
 
 ## DFD LEVEL 0
 ```mermaid
