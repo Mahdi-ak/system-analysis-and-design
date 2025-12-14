@@ -34,6 +34,7 @@ flowchart LR
     FireDept -->|آمار و گزارش کشوری| Ministry
 ```
 ---
+---
 
 ## DFD LEVEL 1
 
@@ -130,3 +131,69 @@ flowchart LR
 
     S1 -->|گزارش نظارتی| FireDept
 ```
+---
+---
+
+##DFD Level 1 معاونت امور مالی
+
+```mermaid
+flowchart LR
+
+    %% External Entities
+    Municipality([شهرداری / واحد مالی شهرداری])
+    Suppliers([پیمانکاران / تامین‌کنندگان])
+    Units([سایر معاونت‌ها و واحدهای سازمان])
+    Warehouse([انبار مرکزی / اموال])
+
+    %% Main Process
+    subgraph FinanceDept[معاونت مالی و اقتصادی]
+        
+        subgraph A1[1. اداره مالی و حسابداری]
+            A1a[ثبت اسناد مالی]
+            A1b[حسابداری و حقوق]
+            A1c[کنترل اموال و انبار]
+        end
+
+        subgraph A2[2. اداره درآمد و اقتصادی]
+            A2a[ثبت درآمدها]
+            A2b[گزارش درآمد به شهرداری]
+        end
+
+        subgraph A3[3. اداره تدارکات و کارپردازی]
+            A3a[دریافت درخواست خرید]
+            A3b[استعلام قیمت]
+            A3c[صدور سفارش خرید]
+        end
+
+        subgraph A4[4. نگهداری و تعمیرات تجهیزات]
+            A4a[ثبت درخواست تعمیر]
+            A4b[برآورد هزینه تعمیر]
+        end
+
+    end
+
+    %% Data Flows
+
+    Units -->|درخواست خرید / درخواست هزینه| A3a
+    Units -->|درخواست تعمیر تجهیزات| A4a
+
+    A3b -->|استعلام قیمت| Suppliers
+    Suppliers -->|پیشنهاد قیمت / پیش‌فاکتور| A3b
+
+    A3c -->|سفارش خرید| Suppliers
+    Suppliers -->|تحویل کالا| Warehouse
+
+    Warehouse -->|تأیید دریافت کالا| A3c
+    Warehouse -->|اطلاعات اموال| A1c
+
+    Municipality -->|بودجه مصوب / تخصیص اعتبار| A1a
+    A2b -->|گزارش درآمد| Municipality
+
+    A1a -->|اسناد مالی| A2a
+    A1b -->|پرداخت حقوق و هزینه‌ها| Units
+
+    A4b -->|هزینه تعمیر| A1a
+    A4b -->|اطلاع وضعیت تجهیزات| Units
+```
+---
+---
