@@ -195,5 +195,34 @@ flowchart LR
     A4b -->|هزینه تعمیر| A1a
     A4b -->|اطلاع وضعیت تجهیزات| Units
 ```
+
 ---
 ---
+
+## ER DIAGRAM
+
+```mermaid
+erDiagram
+
+    ORGANIZATION ||--|| OPERATIONS_DEPUTY : "دارای"
+    ORGANIZATION ||--|| PREVENTION_DEPUTY : "دارای"
+    ORGANIZATION ||--|| HR_DEVELOPMENT_DEPUTY : "دارای"
+    ORGANIZATION ||--|| FINANCIAL_DEPUTY : "دارای"
+    ORGANIZATION ||--|| LEGAL_DEPARTMENT : "شامل"
+    ORGANIZATION ||--|| SECURITY_DEPARTMENT : "شامل"
+
+    OPERATIONS_DEPUTY ||--|{ FIRE_STATIONS : "مدیریت"
+    OPERATIONS_DEPUTY ||--|| COMMUNICATION_CENTER : "زیرمجموعه"
+
+    PREVENTION_DEPUTY ||--|| SAFETY_ENGINEERING_UNIT : "زیرمجموعه"
+    PREVENTION_DEPUTY ||--|| FIRE_CAUSE_ANALYSIS_UNIT : "زیرمجموعه"
+
+    HR_DEVELOPMENT_DEPUTY ||--|| TRAINING_UNIT : "شامل"
+    HR_DEVELOPMENT_DEPUTY ||--|| HUMAN_RESOURCES_UNIT : "شامل"
+    HR_DEVELOPMENT_DEPUTY ||--|| PLANNING_UNIT : "شامل"
+
+    FINANCIAL_DEPUTY ||--|| ACCOUNTING_UNIT : "شامل"
+    FINANCIAL_DEPUTY ||--|| PROCUREMENT_UNIT : "شامل"
+    FINANCIAL_DEPUTY ||--|| EQUIPMENT_MAINTENANCE_UNIT : "نظارت"
+
+```
