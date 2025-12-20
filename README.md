@@ -3,36 +3,32 @@
 ## DFD LEVEL 0
 
 ```mermaid
-flowchart LR
-    %% External Entities
-    Citizen([شهروندان / تماس‌گیرندگان])
-    Municipality([شهرداری تبریز])
-    Court([مراجع قضایی])
-    Contractors([پیمانکاران و شرکتهای تجهیزات])
-    Services([سازمان‌های خدمات شهری<br>اورژانس، پلیس، گاز، برق])
-    Ministry([وزارت کشور])
-
-    %% Main Process
-    FireDept((سازمان آتش‌نشانی تبریز))
-
-    %% Data Flows
-    Citizen -->|گزارش حادثه / درخواست ایمنی| FireDept
-    FireDept -->|اعزام نیرو، پاسخ‌دهی، نتیجه عملیات| Citizen
-
-    Municipality -->|بودجه، مصوبات، ابلاغیه‌ها| FireDept
-    FireDept -->|گزارش عملکرد / گزارش آماری| Municipality
-
-    Court -->|استعلام علت حادثه| FireDept
-    FireDept -->|گزارش کارشناسی علل حریق| Court
-
-    Contractors -->|تجهیزات / قراردادها| FireDept
-    FireDept -->|درخواست خرید، اسناد قرارداد| Contractors
-
-    Services -->|هماهنگی عملیاتی| FireDept
-    FireDept -->|اطلاع‌رسانی و درخواست پشتیبانی| Services
-
-    Ministry -->|بخشنامه‌ها / مقررات ملی| FireDept
-    FireDept -->|آمار و گزارش کشوری| Ministry
+  flowchart LR
+  
+  %% ===== External Entities =====
+  Citizen[شهروندان]
+  Municipality[شهرداری تبریز]
+  Contractors[پیمانکاران]
+  OtherOrgs[اورژانس / پلیس / گاز / برق]
+  
+  %% ===== Main Process (Vertical & Larger Rectangle) =====
+  FireDept[سازمان<br/>آتش‌نشانی<br/>تبریز]
+  
+  %% ===== Styling: make it vertical & bigger =====
+  style FireDept width:120px,height:340px,stroke:#0D47A1,stroke-width:2px
+  
+  %% ===== Data Flows =====
+  Citizen -->|گزارش حادثه / درخواست ایمنی| FireDept
+  FireDept -->|خدمات امداد و ایمنی| Citizen
+  
+  Municipality -->|بودجه / مصوبات| FireDept
+  FireDept -->|گزارش عملکرد| Municipality
+  
+  Contractors -->|کالا / خدمات| FireDept
+  FireDept -->|پرداخت / قرارداد| Contractors
+  
+  OtherOrgs -->|هماهنگی عملیاتی| FireDept
+  FireDept -->|اطلاعات حادثه / درخواست پشتیبانی| OtherOrgs
 ```
 
 ---
