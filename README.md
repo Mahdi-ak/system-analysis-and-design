@@ -394,6 +394,141 @@ erDiagram
 ---
 ---
 
+## ERD - Entity Matrix
+
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse; text-align:center; font-family:Tahoma;">
+    <caption style="font-weight:bold; margin-bottom:10px;">
+        ماتریس موجودیت‌ها (ERD) – سازمان آتش‌نشانی
+    </caption>
+    <thead>
+        <tr style="background-color:#f2f2f2;">
+            <th>موجودیت</th>
+            <th>پرسنل</th>
+            <th>ایستگاه</th>
+            <th>حادثه</th>
+            <th>ماموریت</th>
+            <th>خودرو</th>
+            <th>تجهیزات</th>
+            <th>ساختمان</th>
+            <th>قرارداد</th>
+            <th>پیمانکار</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>پرسنل</td>
+            <td>—</td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>ایستگاه</td>
+            <td>X</td>
+            <td>—</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>حادثه</td>
+            <td></td>
+            <td>X</td>
+            <td>—</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>ماموریت</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>—</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>خودرو</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>—</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>تجهیزات</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td>X</td>
+            <td>—</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>ساختمان</td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>—</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>قرارداد</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>—</td>
+            <td>X</td>
+        </tr>
+        <tr>
+            <td>پیمانکار</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td>—</td>
+        </tr>
+    </tbody>
+</table>
+
+---
+---
+
 ## Entity Matrix
 
 <table>
